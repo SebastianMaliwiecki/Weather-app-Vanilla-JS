@@ -1,0 +1,19 @@
+* {
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+#weather {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-style: solid;
+    width: 350px;
+}
+
+#weatherInfo {
+    
+    padding: 20px;
+}
