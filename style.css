@@ -14,6 +14,23 @@
 }
 
 #weatherInfo {
-    
     padding: 20px;
+}
+
+#tempDiv {
+    transition: all 1s ease-in-out;
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+
+#state:checked ~ #tempDiv {  
+    max-height: 100px;
+    padding: 16px;
+}
+
+#getWeather {
+    cursor: pointer;
+    transition: 0.4s;
 }
