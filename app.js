@@ -33,7 +33,7 @@ document.getElementById("getWeather").addEventListener("click", async () => {
     if(location ==="")   return
     console.log("now we fetch")
     document.getElementById("getWeather").disabled = true;
-    const coordinates = await fetchLatLng();
+    const coordinates = await fetchLatLng(location);
     console.log(coordinates);
     fetchWeather(coordinates.lat, coordinates.lng);
     document.getElementById("getWeather").disabled = false;
