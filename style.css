@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
-* {
+*, p {
     margin: 0px;
     font-family: 'Montserrat', sans-serif;
 }
@@ -42,15 +42,9 @@ ul {
 
 #tempDiv {
     transition: all 1s ease-in-out;
-    padding: 0 18px;
-    display: none;
     background-color: white;
     overflow: hidden;
-}
-
-#state:checked ~ #tempDiv {  
-    max-height: 100px;
-    padding: 16px;
+    margin-top: 30px;
 }
 
 #getWeather {
