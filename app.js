@@ -2,9 +2,13 @@ const fetchLatLng = async location => {
     try {
         const locationPromise = await fetch(`https://api.opencagedata.com/geocode/v1/json?q=${location}&key=2cd3601c75784a65870073e5211ffcc5`);
         const locationResult = await locationPromise.json();
+        console.log(locationResult)
+        console.log(locationResult.results[0].components.city)
         return  {
             lat: locationResult.results[0].geometry.lat,
             lng: locationResult.results[0].geometry.lng,
+            city: locationResult.results[0].components.city,
+            coutnry: locationResult.results[0].components.country
         }
     } 
     catch (error) {
@@ -23,7 +27,7 @@ const fetchWeather = async (lat, lng) => {
     }
 }
 
-const unixConverter = async (Utimestamp) => {
+const unixConverter = async Utimestamp => {
     try {
         const timePromise = await fetch(`https://showcase.api.linx.twenty57.net/UnixTime/fromunix?timestamp=${Utimestamp}`);
         const timeResult = await timePromise.json();
@@ -37,6 +41,8 @@ const unixConverter = async (Utimestamp) => {
 const updateWeatherInfo = weatherInfo => {
     document.getElementById("temperature").innerHTML = `Current temperature is ${weatherInfo.current.temp}`;
     console.log("weather info updated.");
+    document.getElementById("tempDiv").style.display="block";
+    // document.getElementById("inputField").style.display="none";
 }
 
 document.getElementById("getWeather").addEventListener("click", async () => {
@@ -55,4 +61,12 @@ document.getElementById("getWeather").addEventListener("click", async () => {
     // un-disables button
     document.getElementById("getWeather").disabled = false;
     document.getElementById("getWeather").innerHTML = "Get Weather!"
+})
+
+const locInput = document.getElementById("userInput");
+
+locInput.addEventListener("blur", e => {
+    if(e.target.value) {
+
+    }
 })

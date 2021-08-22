@@ -5,8 +5,28 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-main {
-    background-color: #f7f7f7;
+:root {
+    /* Light mode */
+
+    /* Dark mode */
+
+    /* Common used styles */
+    --background-colour: #f7f7f7;
+    --animation-duration: 0.3s;
+    --black-border-2: black solid 2px;
+}
+
+body {
+    
+}
+
+
+.dark {
+    --dark-background: rgb();
+}
+
+#background {
+    background-color: rgb(224,224,224);
     height: 100vh;
     /* width: 100%; */
     background-position: center;
@@ -14,37 +34,28 @@ main {
     background-size: cover;
 }
 
-header  {
-    height: 30px;
-    background-color: grey;
-}
-
-ul {
-    display:flex;  
-    list-style:none;
-}
-
 #weather {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #f7f7f7;
-    width: 350px;
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: rgb(244,242,247);
+    width: auto;
     border-radius: 7px;
+    justify-content: center;
 }
 
 #weatherInfo {
     padding: 20px;
     text-align: center;
+    width: 350px;
 }
 
 #tempDiv {
-    transition: all 1s ease-in-out;
-    background-color: white;
     overflow: hidden;
     margin-top: 30px;
+    display: none;
+    height: auto;
 }
 
 #getWeather {
@@ -53,21 +64,99 @@ ul {
 }
 
 #getWeather {
-    background-color: black;
-    color: white;
-    transition: .4s ease-in-out;
+    background-color: rgb(244,242,247);
+    color: rgb(39,36,44) !important;
     font-size: 20px;
-    border:solid 2px #1f1f1f;
-    margin-top: 30px;
-    border-radius: 10px;
+    border: 2px solid #ddd;
+    margin-top: 20px;
+    border-radius: 3px;
+    outline: none;
+    transition: box-shadow 0.4s ease, border 0.5s ease;
+    padding: 5px;
 }
 
 #getWeather:hover {
-    background-color: white;
     color: black;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+    border: var(--black-border-2);
+}
+
+#inputField {
+    position: relative;
+    padding-top: 20px;
+    display: flex;
+    display: block;
+    /* border: red solid 1px; */
 }
 
 #userInput {
+    background-color: rgb(244,242,247);
+    border: none;
+    appearance: none;
+    padding: 12px;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 3px;
+    outline: none;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    transition: box-shadow 0.3s ease, border 0.7s ease;
+    border: 2px solid #ddd;
+}
+
+#userInput:focus {
+    cursor: default;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
+    border: var(--black-border-2);
+}
+
+#userInput:hover {
+    cursor: default;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
+    border: var(--black-border-2);
+}
+
+#inputField .placeholder {
+    position: absolute;
+    left: 31%;
+    top: 33px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #aaa;
+    text-decoration: none;
+    cursor: default;
+    transition: 
+        top var(--animation-duration) ease,
+        font-size var(--animation-duration) ease,
+        color var(--animation-duration) ease,
+        left var(--animation-duration) ease,
+        background-color 0.4s ease;
+}
+
+#inputField #userInput:focus + .placeholder, 
+#inputField #userInput:valid + .placeholder {
+    top: 10px;
+    font-size: 14px;
+    color: black;
+    left: 33.5%;
+    background-color: rgb(244,242,247);
+}
+
+figure {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 150px;
+    border: solid;
+    /* background-color: rgb(29,116,242); */
+    border-radius: 7px;
+}
+
+.show-item {
+    display: block;
 }
