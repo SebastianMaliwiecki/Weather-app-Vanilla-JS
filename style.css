@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
-*, p {
+*, p{
     margin: 0px;
     font-family: 'Montserrat', sans-serif;
 }
 
 :root {
     /* Light mode */
+    --white-mode-background: #E0E0E0;
 
     /* Dark mode */
-
+    --dark-mode-background:#181719;
+    --dark-mode-foreground: #24242C;
+    --dark-mode-foreground2: #323A41;
+    --dark-mode-font-colour: white;
     /* Common used styles */
     --background-colour: #f7f7f7;
     --animation-duration: 0.3s;
@@ -17,22 +21,24 @@
 }
 
 body {
-    
-}
-
-
-.dark {
-    --dark-background: rgb();
-}
-
-#background {
-    background-color: rgb(224,224,224);
+    background-color: #E0E0E0;
     height: 100vh;
     /* width: 100%; */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    transition: 0.3s ease-in;
 }
+
+
+.dark-background {
+    background-color: var(--dark-mode-background) !important;
+}
+
+.dark-foreground {
+    background-color: var(--dark-mode-foreground) !important;
+}
+
 
 #weather {
     position: absolute;
@@ -43,6 +49,7 @@ body {
     width: auto;
     border-radius: 7px;
     justify-content: center;
+    transition: 0.3s ease-in;
 }
 
 #weatherInfo {
@@ -59,11 +66,6 @@ body {
 }
 
 #getWeather {
-    cursor: pointer;
-    transition: 0.4s;
-}
-
-#getWeather {
     background-color: rgb(244,242,247);
     color: rgb(39,36,44) !important;
     font-size: 20px;
@@ -73,12 +75,15 @@ body {
     outline: none;
     transition: box-shadow 0.4s ease, border 0.5s ease;
     padding: 5px;
+    cursor: pointer;
+    transition: .5s ease;
 }
 
 #getWeather:hover {
     color: black;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
     border: var(--black-border-2);
+    transform: scale(1.1);
 }
 
 #inputField {
@@ -106,7 +111,7 @@ body {
     border: 2px solid #ddd;
 }
 
-#userInput:focus {
+#userInput:focus, #userInput:valid {
     cursor: default;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
     border: var(--black-border-2);
@@ -115,7 +120,7 @@ body {
 #userInput:hover {
     cursor: default;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
-    border: var(--black-border-2);
+    /* border: var(--black-border-2); */
 }
 
 #inputField .placeholder {
@@ -159,4 +164,11 @@ img {
 
 .show-item {
     display: block;
+}
+
+/* light and dark mode switcher */
+
+.theme-switch {
+    display: inline-block;
+    margin-top: 15px;
 }

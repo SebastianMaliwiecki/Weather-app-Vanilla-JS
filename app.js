@@ -63,10 +63,8 @@ document.getElementById("getWeather").addEventListener("click", async () => {
     document.getElementById("getWeather").innerHTML = "Get Weather!"
 })
 
-const locInput = document.getElementById("userInput");
-
-locInput.addEventListener("blur", e => {
-    if(e.target.value) {
-
-    }
+document.getElementById("changeTheme").addEventListener("click", () => {
+    document.body.classList.toggle("dark-background");
+    document.getElementById("weather").classList.toggle("dark-foreground");
+    console.log("Theme changed");
 })
