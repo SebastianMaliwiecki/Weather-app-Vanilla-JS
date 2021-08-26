@@ -14,6 +14,7 @@
     --dark-mode-foreground: #24242C;
     --dark-mode-foreground2: #323A41;
     --dark-mode-font-colour: white;
+    --darm-mode-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.2);
     /* Common used styles */
     --background-colour: #f7f7f7;
     --animation-duration: 0.3s;
@@ -21,13 +22,13 @@
 }
 
 body {
-    background-color: #E0E0E0;
+    background-color: var(--white-mode-background);
     height: 100vh;
     /* width: 100%; */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    transition: 0.3s ease-in;
+    transition: 0.3s ease-in, height 0.7s ease;
 }
 
 
@@ -37,6 +38,10 @@ body {
 
 .dark-foreground {
     background-color: var(--dark-mode-foreground) !important;
+}
+
+.extend {
+    height: 600px;
 }
 
 
@@ -102,7 +107,7 @@ body {
     width: 100%;
     border-radius: 3px;
     outline: none;
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.2);
     text-align: center;
     -webkit-appearance: none;
     -ms-appearance: none;
