@@ -50,21 +50,24 @@ document.getElementById("getWeather").addEventListener("click", async () => {
     let location = document.getElementById("userInput").value;
     if(location ==="")   return
     console.log("now we fetch")
+
     // disables button
     document.getElementById("getWeather").disabled = true;
     document.getElementById("getWeather").innerHTML = "Loading ..."
+
     const coordinates = await fetchLatLng(location);
     console.log(coordinates);
     const weatherInfo = await fetchWeather(coordinates.lat, coordinates.lng);
     console.log(weatherInfo)
     updateWeatherInfo(weatherInfo); 
+    
     // un-disables button
     document.getElementById("getWeather").disabled = false;
     document.getElementById("getWeather").innerHTML = "Get Weather!"
 })
 
 document.getElementById("changeTheme").addEventListener("click", () => {
-    document.body.classList.toggle("dark-background");
+    document.body.classList.toggle("dark");
     document.getElementById("weather").classList.toggle("dark-foreground");
     console.log("Theme changed");
 })
