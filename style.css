@@ -59,12 +59,13 @@ body.dark {
     border-radius: 7px;
     justify-content: center;
     transition: 0.3s ease-in;
+    display: block;
 }
 
 #weatherInfo {
     padding: 20px;
     text-align: center;
-    width: 350px;
+    width: 400px;
 }
 
 #tempDiv {
@@ -108,7 +109,7 @@ body.dark {
     border: none;
     appearance: none;
     padding: 12px;
-    width: 100%;
+    width: 90%;
     border-radius: 3px;
     outline: none;
     box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.2);
@@ -166,7 +167,6 @@ figure {
 
 img {
     width: 150px;
-    border: solid;
     /* background-color: rgb(29,116,242); */
     border-radius: 7px;
 }
