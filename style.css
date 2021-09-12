@@ -5,6 +5,8 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+
+
 :root {
     /* Light mode */
     --white-mode-background: #E0E0E0;
@@ -35,7 +37,7 @@ body {
 }
 
 body.dark {
-    background-color: var(--dark-mode-background) !important;
+    background-color: var(--dark-mode-background);
     color: var(--dark-mode-font-colour) !important;
 }
 
@@ -46,10 +48,6 @@ body.dark {
 
 .dark-foreground {
     background-color: var(--dark-mode-foreground) !important;
-}
-
-.extend {
-    height: 600px;
 }
 
 
@@ -68,6 +66,12 @@ body.dark {
     width: 400px;
 }
 
+@media screen and (max-width : 768px) {
+    #weatherInfo {
+        width: 300px;
+    }
+}
+
 #tempDiv {
     overflow: hidden;
     margin-top: 30px;
@@ -75,9 +79,13 @@ body.dark {
     height: auto;
 }
 
+.search-button {
+    display: block;
+    justify-content: center;
+}
+
 #getWeather {
     background-color: rgb(244,242,247);
-    
     font-size: 20px;
     border: 2px solid #ddd;
     margin-top: 20px;
