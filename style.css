@@ -32,7 +32,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    transition: 0.3s ease-in, height 0.7s ease;
+    transition: 0.3s ease-in;
     color: rgb(39,36,44) !important;
 }
 
@@ -101,7 +101,6 @@ body.dark {
     color: black;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
     border: var(--black-border-2);
-    transform: scale(1.1);
 }
 
 #inputField {
