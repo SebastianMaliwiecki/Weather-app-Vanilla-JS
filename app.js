@@ -69,5 +69,10 @@ document.getElementById("getWeather").addEventListener("click", async () => {
 document.getElementById("changeTheme").addEventListener("click", () => {
     document.body.classList.toggle("dark");
     document.getElementById("weather").classList.toggle("dark-foreground");
+
+    const allElements = ["userInput", "test"];
+    console.log(allElements[0]);
+
+    document.getElementById(allElements[0]).classList.toggle("dark");
     console.log("Theme changed");
 })
