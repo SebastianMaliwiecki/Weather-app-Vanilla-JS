@@ -12,9 +12,11 @@
     </head>
     <body>
         <main>
-            <div id="weather">
-                <div id="weatherInfo">
-                    <img src=".//cloudy-day-1.svg" alt="">
+            <div id="weather-container">
+                <div id="weather-box">
+                    <figure>
+                        <img src=".//cloudy-day-1.svg" alt="cloudy-weather-icon">
+                    </figure>
                     <div id="inputField">
                         <input id="userInput" type="text" required>
                         <span class="placeholder">Type in location</span>
@@ -26,7 +28,6 @@
                     <div class="search-button">
                         <button id="changeTheme">Change theme</button>
                     </div>
-                    
                     <hr>
                     <div id="tempDiv">
                         <p id="temperature"></p>

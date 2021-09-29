@@ -51,7 +51,7 @@ body.dark {
 }
 
 
-#weather {
+#weather-container {
     background-color: rgb(244,242,247);
     width: auto;
     border-radius: 7px;
@@ -60,14 +60,14 @@ body.dark {
     display: block;
 }
 
-#weatherInfo {
+#weather-box {
     padding: 20px;
     text-align: center;
     width: 400px;
 }
 
 @media screen and (max-width : 768px) {
-    #weatherInfo {
+    #weather-box {
         width: 300px;
     }
 }
